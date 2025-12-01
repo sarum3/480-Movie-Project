@@ -82,8 +82,7 @@ def movie_details():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
-    # 1) Get the movie row (id, title, overview) by title
-    #    (case-insensitive match on original_title)
+    # get movie title, id, and overview
     movie_query = """
         SELECT id, original_title, overview
         FROM movies_metadata
@@ -99,11 +98,7 @@ def movie_details():
 
     movie_id = movie_row["id"]
 
-    # 2) Compute AVG rating for that movie id
-    #    This matches your requested logic:
-    #    SELECT AVG(rating) FROM ratings
-    #    JOIN movies_metadata ON ratings.movieId = movies_metadata.id
-    #    WHERE movies_metadata.original_title = ?
+    #get the average rating for the movie
     avg_query = """
         SELECT AVG(r.rating) AS average_rating
         FROM ratings r
@@ -117,7 +112,7 @@ def movie_details():
 
     average_rating = avg_row["average_rating"] if avg_row and avg_row["average_rating"] is not None else None
 
-    # 3) Build response
+    # send info to the frontend
     return jsonify({
         "id": movie_row["id"],
         "title": movie_row["original_title"],
