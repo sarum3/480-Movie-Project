@@ -6,12 +6,10 @@ Creating an app where users can find and create reviews of movies. There will be
 
 
 # Data Requirements:
-### User:
-We record unique IDs for each user which will be used for identification. We will also need their name, username, and email address
+### Ratings: 
+We record IDs for each movie that has a rating. We record a rating for each movie in the table on a 0-5 scale.
 ### Movies: 
 We record unique IDs for each movie to be used for identification. We will also need movie title, genre,  rating, and cast.
-### Reviews:
-We record reviews, ID of reviewer, and ID of movie being reviewed
 
 
 # Web Technologies:
