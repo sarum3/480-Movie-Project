@@ -12,13 +12,15 @@ We record IDs for each movie that has a rating. We record a rating for each movi
 We record unique IDs for each movie to be used for identification. We will also need movie title, genre,  rating, and cast.
 
 
-# Web Technologies:
-### Frontend: 
-Tailwind/Booster (styling & responsive layout), HTML (page structure)
-### Backend:
-SQLite (database), Docker (deployment & virtual environment), Flask (routing, request handling, server logic)
+# Web Technologies
+# Frontend
+  React, Bootstrap
+# Backend
+  Flask, CSV to DB (SQLite) - DB too big for Git
+# Tools
+  Docker, Git
 
 
 # Application Requirements: 
-Users must enter their name, username, password (optional), and email address before accessing or writing reviews. Upon entering their information, the application will display some of the movies in the database to allow the user to look through. Users can select a movie from the database to write and submit their review. Users can also view existing reviews from the search. 
-
+Movies: We record unique IDs for each movie to be used for identification. We will also need movie title, genre, and overview.
+Ratings: We record IDs for each movie that has a rating. We record a rating for each movie in the table on a 0-5 scale.
